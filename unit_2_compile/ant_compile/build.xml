@@ -17,9 +17,9 @@
         <mkdir dir="build/jar"/>
         <jar destfile="build/jar/ant_compile.jar" basedir="build/classes">
             <manifest>
-                <attribute name="Compile-Class" value="ua.com.alevel.Compile"/>
-                <attribute name="Class-Path" value="libs/commons-lang3-3.11.jar"/>
-                <attribute name="Class-Path" value="libs/commons-math3-3.6.1.jar"/>
+                <attribute name="Main-Class" value="ua.com.alevel.Compile"/>
+                <attribute name="Class-Path1" value="libs/commons-lang3-3.11.jar"/>
+                <attribute name="Class-Path2" value="libs/commons-math3-3.6.1.jar"/>
             </manifest>
             <zipgroupfileset dir="libs" includes="*.jar"/>
         </jar>

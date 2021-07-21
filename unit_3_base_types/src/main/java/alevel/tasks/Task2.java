@@ -9,9 +9,10 @@ public class Task2 {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.print("String: ");
+            boolean shouldBreak = false;
+            System.out.print("Введите строку: ");
             String str = scanner.nextLine();
-            String test = str.replaceAll("[^a-zA-Zа-яёА-ЯЁ]", "");
+            String test = str.replaceAll("[^a-zA-Zа-яА-Я]", "");
             if ("".equals(test))
                 break;
 
@@ -27,6 +28,8 @@ public class Task2 {
                 System.out.printf("'%c'\t%d\n", c, map.get(c));
 
             System.out.println();
+            shouldBreak = true;
+            if (shouldBreak) break;
         }
     }
 

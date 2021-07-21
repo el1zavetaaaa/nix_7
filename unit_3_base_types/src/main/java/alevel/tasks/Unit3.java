@@ -10,25 +10,28 @@ public class Unit3 {
             System.out.println("2.Вычислние вхождений каждого символа в строку.");
             System.out.println("3.Вычисление времени конца урока в школе.");
             System.out.println("4.Выход из программы ");
-            System.out.print("Введите омер задания:");
+            System.out.print("Введите номер задания:");
             int number;
-            Scanner number = new Scanner(System.in);
-            number = number.nextInt();
+            Scanner scanner = new Scanner(System.in);
+            number = scanner.nextInt();
+            boolean shouldBreak = false;
+
             switch (number) {
-                case 1:
+                case (1):
                     Task1.task1();
                     break;
-                case 2:
+                case (2):
                     Task2.task2();
                     break;
-                case 3:
+                case (3):
                     Task3.task3();
                     break;
-                case 4:
-                    number.close();
-                    System.exit(0);
+                case (4):
+                    shouldBreak = true;
+                    System.out.println("Спасибо за внимание!");
                     break;
             }
+            if (shouldBreak) break;
         }
     }
 }

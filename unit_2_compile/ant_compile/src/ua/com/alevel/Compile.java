@@ -9,4 +9,5 @@ public class Compile {
         new Console().console();
         new Math().math();
     }
+
 }

@@ -1,5 +1,6 @@
 .idea
 *.iml
-unit_2_compile/maven_compile/target
+target
+
 
 

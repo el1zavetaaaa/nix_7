@@ -4,7 +4,8 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class Task2 {
+public class NumberofLettersinString {
+
     public static void task2() {
         Scanner scanner = new Scanner(System.in);
 

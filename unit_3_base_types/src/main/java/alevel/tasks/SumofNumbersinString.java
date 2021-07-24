@@ -2,7 +2,8 @@ package alevel.tasks;
 
 import java.util.Scanner;
 
-public class Task1 {
+public class SumofNumbersinString {
+
     public static void task1() {
 
         Scanner in = new Scanner(System.in);

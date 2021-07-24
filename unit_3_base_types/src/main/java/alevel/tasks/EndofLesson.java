@@ -2,7 +2,8 @@ package alevel.tasks;
 
 import java.util.Scanner;
 
-public class Task3 {
+public class EndofLesson {
+
     public static void task3() {
         int Lesson;
         int hour;

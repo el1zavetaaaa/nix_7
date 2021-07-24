@@ -44,7 +44,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>alevel.tasks.Unit3</mainClass>
+                                    <mainClass>alevel.tasks.Unit3AllTasks</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

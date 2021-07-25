@@ -14,24 +14,26 @@ public class NumberofLettersinString {
             System.out.print("Введите строку: ");
             String str = scanner.nextLine();
             String test = str.replaceAll("[^a-zA-Zа-яА-Я]", "");
-            if ("".equals(test))
+            if ("".equals(test)) {
                 break;
-
+            }
             Map<Character, Integer> map = new TreeMap<Character, Integer>();
-            for (char c : test.toCharArray())
+            for (char c : test.toCharArray()) {
                 map.put(c, (map.containsKey(c)) ? map.get(c) + 1 : 1);
-
+            }
             StringBuilder sb = new StringBuilder();
-            for (char c : map.keySet())
+            for (char c : map.keySet()) {
                 sb.append(c);
+            }
             System.out.println("Unique characters: \"" + sb.toString() + "\"");
-            for (char c : map.keySet())
+            for (char c : map.keySet()) {
                 System.out.printf("'%c'\t%d\n", c, map.get(c));
-
+            }
             System.out.println();
+            if (shouldBreak) {
+                break;
+            }
             shouldBreak = true;
-            if (shouldBreak) break;
         }
     }
-
 }

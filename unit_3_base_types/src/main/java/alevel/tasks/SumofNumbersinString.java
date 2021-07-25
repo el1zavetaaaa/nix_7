@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class SumofNumbersinString {
 
     public static void sumofnumbersinstring() {
-
         Scanner in = new Scanner(System.in);
         System.out.print("Введите строку: ");
         String str = in.nextLine();
@@ -18,12 +17,7 @@ public class SumofNumbersinString {
                 a[i] = number;
                 result += a[i];
             }
-
-
         }
-
         System.out.println(result);
-
-
     }
 }

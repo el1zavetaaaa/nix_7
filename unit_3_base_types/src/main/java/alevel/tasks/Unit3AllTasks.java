@@ -2,7 +2,6 @@ package alevel.tasks;
 
 import java.util.Scanner;
 
-
 public class Unit3AllTasks {
 
     public static void main(String[] args) {

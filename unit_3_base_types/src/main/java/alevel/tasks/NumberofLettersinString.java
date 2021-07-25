@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 public class NumberofLettersinString {
 
-    public static void task2() {
+    public static void numberoflettersinstring() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {

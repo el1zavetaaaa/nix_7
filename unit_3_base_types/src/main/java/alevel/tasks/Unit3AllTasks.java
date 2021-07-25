@@ -19,13 +19,13 @@ public class Unit3AllTasks {
 
             switch (number) {
                 case (1):
-                    SumofNumbersinString.task1();
+                    SumofNumbersinString.sumofnumbersinstring();
                     break;
                 case (2):
-                    NumberofLettersinString.task2();
+                    NumberofLettersinString.numberoflettersinstring();
                     break;
                 case (3):
-                    EndofLesson.task3();
+                    EndofLesson.endoflesson();
                     break;
                 case (4):
                     shouldBreak = true;

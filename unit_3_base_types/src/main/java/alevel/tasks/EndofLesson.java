@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class EndofLesson {
 
-    public static void task3() {
+    public static void endoflesson() {
         int Lesson;
         int hour;
         Scanner in = new Scanner(System.in);

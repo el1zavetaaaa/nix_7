@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SumofNumbersinString {
 
-    public static void task1() {
+    public static void sumofnumbersinstring() {
 
         Scanner in = new Scanner(System.in);
         System.out.print("Введите строку: ");

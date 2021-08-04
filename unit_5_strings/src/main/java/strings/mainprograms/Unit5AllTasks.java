@@ -1,7 +1,7 @@
 package strings.main;
 
-import strings.stringprograms.*;
 
+import strings.lib.ReverseString;
 import java.util.Scanner;
 
 public class Unit5AllTasks {
@@ -26,13 +26,13 @@ public class Unit5AllTasks {
                     Scanner in1 = new Scanner(System.in);
                     System.out.println("Введите строку:");
                     String str1 = in1.nextLine();
-                    System.out.println(SimpleReverse.simplereverse(str1));
+                    System.out.println(ReverseString.simplereverse(str1));
                     break;
                 case (2):
                     Scanner in2 = new Scanner(System.in);
                     System.out.println("Введите строку:");
                     String str2 = in2.nextLine();
-                    SubstringReverse.reversesubstring(str2);
+                    ReverseString.reversesubstring(str2);
                     break;
                 case (3):
                     Scanner in3 = new Scanner(System.in);
@@ -42,13 +42,13 @@ public class Unit5AllTasks {
                     int index1 = in3.nextInt();
                     System.out.println("Введите последний индекс:");
                     int index2 = in3.nextInt();
-                    ReverseByIndex.reversebyindex(str3, index1, index2);
+                    ReverseString.reversebyindex(str3, index1, index2);
                     break;
                 case (4):
                     Scanner in4 = new Scanner(System.in);
                     System.out.println("Введите строку:");
                     String str4 = in4.nextLine();
-                    ReverseByChar.reversebychar(str4);
+                    ReverseString.reversebychar(str4);
                     break;
                 case (5):
                     shouldBreak = true;

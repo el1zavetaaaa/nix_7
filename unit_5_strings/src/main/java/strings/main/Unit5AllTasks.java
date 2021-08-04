@@ -1,5 +1,6 @@
-package strings.stringprograms;
+package strings.main;
 
+import strings.stringprograms.*;
 
 import java.util.Scanner;
 
@@ -22,35 +23,33 @@ public class Unit5AllTasks {
             switch (number) {
 
                 case (1):
-                    Scanner console1 = new Scanner(System.in);
+                    Scanner in1 = new Scanner(System.in);
                     System.out.println("Введите строку:");
-                    String str1 = console1.nextLine();
+                    String str1 = in1.nextLine();
                     System.out.println(SimpleReverse.simplereverse(str1));
                     break;
                 case (2):
-                    Scanner console2 = new Scanner(System.in);
+                    Scanner in2 = new Scanner(System.in);
                     System.out.println("Введите строку:");
-                    String str2 = console2.nextLine();
-                    SubstringReverse.substringreverse(str2);
+                    String str2 = in2.nextLine();
+                    SubstringReverse.reversesubstring(str2);
                     break;
                 case (3):
-
-                    Scanner console3 = new Scanner(System.in);
+                    Scanner in3 = new Scanner(System.in);
                     System.out.println("Введите строку:");
-                    String str3 = console3.nextLine();
+                    String str3 = in3.nextLine();
                     System.out.println("Введите первый индекс:");
-                    int firstindex = console3.nextInt();
+                    int index1 = in3.nextInt();
                     System.out.println("Введите последний индекс:");
-                    int lastindex = console3.nextInt();
-                    ReverseByIndex.reversebyindex(str3, firstindex, lastindex);
+                    int index2 = in3.nextInt();
+                    ReverseByIndex.reversebyindex(str3, index1, index2);
                     break;
                 case (4):
-                    Scanner console4 = new Scanner(System.in);
+                    Scanner in4 = new Scanner(System.in);
                     System.out.println("Введите строку:");
-                    String str4 = console4.nextLine();
+                    String str4 = in4.nextLine();
                     ReverseByChar.reversebychar(str4);
                     break;
-
                 case (5):
                     shouldBreak = true;
                     System.out.println("Спасибо за внимание!");

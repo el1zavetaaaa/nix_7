@@ -2,10 +2,10 @@ package strings.stringprograms;
 
 
 public class ReverseByIndex {
-    public static void reversebyindex(String str, int firstindex, int lastindex) {
+    public static void reversebyindex(String str, int index1, int index2) {
 
         String indexstring = "";
-        for (int i = firstindex; i <lastindex; i++) {
+        for (int i = index1; i < index2; i++) {
             indexstring = indexstring + str.charAt(i);
         }
         String reverseindexstring = SimpleReverse.simplereverse(indexstring);

@@ -1,8 +1,11 @@
 package strings.main;
+
 import java.util.Scanner;
 
 public class ReverseString {
-    private ReverseString(){}
+    private ReverseString() {
+    }
+
     public static String simplereverse(String str) {
         char[] charArray = str.toCharArray();
         String resultString = "";
@@ -13,6 +16,7 @@ public class ReverseString {
 
         return resultString;
     }
+
     public static void reversesubstring(String str) {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите часть строки:");
@@ -21,6 +25,7 @@ public class ReverseString {
         String reversestring = str.replaceAll(substring, reversesubstring);
         System.out.println(reversestring);
     }
+
     public static void reversebyindex(String str, int index1, int index2) {
 
         String indexstring = "";
@@ -33,6 +38,7 @@ public class ReverseString {
         System.out.println(reversestring);
 
     }
+
     public static void reversebychar(String str) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите первый символ:");

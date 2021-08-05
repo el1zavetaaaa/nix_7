@@ -1,5 +1,2 @@
-
-call mvn clean package install
-call mvn clean install
-echo -----------------------------------------------------------------------------------
+call mvn clean package
 call java -jar target/Unit5App.jar

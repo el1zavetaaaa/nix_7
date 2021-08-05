@@ -1,4 +1,4 @@
-package strings.main;
+package strings.mainprograms;
 
 
 import strings.lib.ReverseString;

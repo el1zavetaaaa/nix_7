@@ -1,4 +1,4 @@
-package strings.main;
+package strings.lib;
 
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class ReverseString {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите часть строки:");
         String substring = in.nextLine();
-        String reversesubstring = SimpleReverse.simplereverse(substring);
+        String reversesubstring = ReverseString.simplereverse(substring);
         String reversestring = str.replaceAll(substring, reversesubstring);
         System.out.println(reversestring);
     }
@@ -32,7 +32,7 @@ public class ReverseString {
         for (int i = index1; i < index2; i++) {
             indexstring = indexstring + str.charAt(i);
         }
-        String reverseindexstring = SimpleReverse.simplereverse(indexstring);
+        String reverseindexstring = ReverseString.simplereverse(indexstring);
         String reversestring = str.replaceAll(indexstring, reverseindexstring);
 
         System.out.println(reversestring);
@@ -55,6 +55,6 @@ public class ReverseString {
             if (lastchar == str.charAt(i))
                 lastIndex = i;
         }
-        ReverseByIndex.reversebyindex(str, firstIndex, lastIndex);
+        ReverseString.reversebyindex(str, firstIndex, lastIndex);
     }
 }

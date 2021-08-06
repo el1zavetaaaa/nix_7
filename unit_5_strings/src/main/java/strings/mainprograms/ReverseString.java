@@ -1,4 +1,4 @@
-package strings.lib;
+package strings.mainprograms;
 
 import java.util.Scanner;
 

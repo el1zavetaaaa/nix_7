@@ -1,8 +1,6 @@
 package strings.mainprograms;
 
-
-import strings.lib.ReverseString;
-
+import strings.utils.ReverseString;
 import java.util.Scanner;
 
 public class Unit5AllTasks {

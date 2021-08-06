@@ -1,5 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>strings.mainprograms</groupId>
     <artifactId>app</artifactId>
@@ -10,13 +12,19 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <maven.shade.plugin.version>3.2.0</maven.shade.plugin.version>
     </properties>
-
+    <dependencies>
+        <dependency>
+            <groupId>strings.lib</groupId>
+            <artifactId>ReverseString</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     <build>
-        <finalName>Unit5App</finalName>
+        <finalName>Unit5AllTasks</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -32,7 +40,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>strings.mainprograms.Unit5AllTasks</mainClass>
+                                    <mainClass>strings.mainprograms.Unit5AllTaks</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
@@ -41,5 +49,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

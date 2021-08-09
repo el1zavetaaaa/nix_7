@@ -17,7 +17,6 @@ public class InputHandler {
     public Tuple parse(String val) {
         int x = mapper.map(val.charAt(0));
         int y = mapper.map(Integer.parseInt(String.valueOf(val.charAt(1))));
-
         return new Tuple(x, y);
     }
 
@@ -25,7 +24,6 @@ public class InputHandler {
         Matcher matcher = validMove.matcher(val);
         matcher.matches();
         String coords = matcher.group(1);
-
         return parse(coords);
     }
 
@@ -33,13 +31,11 @@ public class InputHandler {
         Matcher matcher = validMove.matcher(val);
         matcher.matches();
         String coords = matcher.group(3);
-
         return parse(coords);
     }
 
     public boolean isValid(String val) {
         Matcher matcher = validMove.matcher(val);
-
         return matcher.matches();
     }
 }

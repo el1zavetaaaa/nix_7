@@ -33,11 +33,9 @@ public class ChessGame {
         }
     }
 
-
     public ChessBoard getBoard() {
         return board;
     }
-
 
     public boolean isFinished() {
         return isFinished;
@@ -48,7 +46,6 @@ public class ChessGame {
                 ? PieceColor.Black
                 : PieceColor.White;
     }
-
 
     private boolean isCheckPreventable(PieceColor color) {
         boolean canPreventCheck = false;
@@ -63,15 +60,12 @@ public class ChessGame {
                 Tile toTile = board.getTileFromTuple(newLocation);
                 ChessPiece toPiece = toTile.getPiece();
 
-
                 toTile.setPiece(piece);
                 fromTile.empty();
-
 
                 if (!isKingCheck(color)) {
                     canPreventCheck = true;
                 }
-
 
                 toTile.setPiece(toPiece);
                 fromTile.setPiece(piece);
@@ -104,7 +98,6 @@ public class ChessGame {
         }
         return false;
     }
-
 
     private boolean isValidMove(Tuple from, Tuple to, boolean hypothetical) {
         Tile fromTile = board.getTileFromTuple(from);

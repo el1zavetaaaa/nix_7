@@ -3,17 +3,15 @@ package strings.mainprograms;
 import java.util.Scanner;
 
 public class ReverseString {
-    private ReverseString() {
-    }
+
+    private ReverseString() { }
 
     public static String simplereverse(String str) {
         char[] charArray = str.toCharArray();
         String resultString = "";
         for (int i = charArray.length - 1; i >= 0; i--) {
             resultString += charArray[i];
-
         }
-
         return resultString;
     }
 
@@ -27,16 +25,13 @@ public class ReverseString {
     }
 
     public static void reversebyindex(String str, int index1, int index2) {
-
         String indexstring = "";
         for (int i = index1; i < index2; i++) {
             indexstring = indexstring + str.charAt(i);
         }
         String reverseindexstring = ReverseString.simplereverse(indexstring);
         String reversestring = str.replaceAll(indexstring, reverseindexstring);
-
         System.out.println(reversestring);
-
     }
 
     public static void reversebychar(String str) {

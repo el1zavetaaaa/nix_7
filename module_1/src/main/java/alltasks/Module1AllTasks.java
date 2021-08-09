@@ -21,7 +21,6 @@ public class Module1AllTasks {
             boolean shouldBreak = false;
 
             switch (number) {
-
                 case (1):
                     Level1AllTasks.run();
                     break;
@@ -35,12 +34,8 @@ public class Module1AllTasks {
                     shouldBreak = true;
                     System.out.println("The end.");
                     break;
-
             }
             if (shouldBreak) break;
         }
-
-
     }
-
 }

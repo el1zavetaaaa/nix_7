@@ -2,9 +2,7 @@ package Console;
 
 class BoardMapper {
 
-    public BoardMapper() {
-
-    }
+    public BoardMapper() { }
 
     public int map(int val) {
         switch (val) {

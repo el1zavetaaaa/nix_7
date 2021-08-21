@@ -1,0 +1,4 @@
+есть очень большое подозрение, что это не твой код)))
+https://github.com/ecly/console_chess/blob/master/src/main/java/Chess/ChessGame.java
+
+но поставлю 7, все таки много java code)

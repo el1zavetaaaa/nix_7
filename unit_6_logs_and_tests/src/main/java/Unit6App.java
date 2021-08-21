@@ -11,7 +11,7 @@ public class Unit6App {
         while (true) {
             System.out.println("1.CRUD Author.");
             System.out.println("2.CRUD Book.");
-            System.out.println("3.CRUD AuthorBook.");
+            System.out.println("3.Author and Book.");
             System.out.println("4.Stop program.");
             System.out.println("Select any number: ");
             int number;
@@ -31,15 +31,14 @@ public class Unit6App {
                     break;
                 case (4):
                     shouldBreak = true;
-                    System.out.println("Спасибо за внимание!");
                     break;
             }
             if (shouldBreak) break;
         }
 
-            }
+    }
 
 
-        }
+}
 
 

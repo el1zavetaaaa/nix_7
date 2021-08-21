@@ -5,8 +5,6 @@ import java.util.Arrays;
 import entity.AuthorBook;
 
 
-
-
 public class InMemoryAuthorBook {
 
 
@@ -50,22 +48,7 @@ public class InMemoryAuthorBook {
         }
 
     }
-    public void update(AuthorBook authorbook) {
 
-        AuthorBook inDbAuthorBook = findAuthorByIdBook(authorbook.getIdBook());
-        inDbAuthorBook.setIdAuthor(authorbook.getIdAuthor());
-    }
-    public AuthorBook findAuthorByIdBook(String idBook) {
-        for (AuthorBook authorandbook : authorsbooks) {
-            if (authorandbook == null) {
-                continue;
-            }
-            if ((authorandbook.getIdBook()).equals(idBook)) {
-                return authorandbook;
-            }
-        }
-        return null;
-    }
 
     public void delete(String idBook) {
 
@@ -92,7 +75,6 @@ public class InMemoryAuthorBook {
 
 
     }
-
 
 
     public AuthorBook[] findAllAuthorsBooks() {

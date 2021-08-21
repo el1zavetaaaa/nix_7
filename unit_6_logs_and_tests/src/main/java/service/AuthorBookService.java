@@ -8,7 +8,7 @@ import entity.AuthorBook;
 import entity.Book;
 
 import java.util.Arrays;
-import java.util.regex.Pattern;
+
 
 public class AuthorBookService {
     private final InMemoryAuthor authorDao = InMemoryAuthor.getInstance();
@@ -41,18 +41,12 @@ public class AuthorBookService {
                 , authorsId);
 
     }
-    public void update(AuthorBook authorBook) {
-        authorBookDao.update(authorBook);
-    }
 
 
     public void delete(String idBook) {
 
         authorBookDao.delete(idBook);
 
-    }
-    public AuthorBook findBookAuthorByIdBook(String idBook) {
-        return authorBookDao.findAuthorByIdBook(idBook);
     }
 
 

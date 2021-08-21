@@ -42,39 +42,15 @@ class AuthorBookServiceTest {
         AuthorBook[] authorBooks = authorBookService.findAllAuthorsBooks();
         Assertions.assertEquals(USERS_SIZE + 1, authorBooks.length);
     }
-    @Test
-    @Order(3)
-    void update() {
-        AuthorBook[] allAuthorsBooks = authorBookService.findAllAuthorsBooks();
-        String idBook = allAuthorsBooks[0].getIdBook();
-        String idAuthor = allAuthorsBooks[0].getIdAuthor();
-        AuthorBook authorBook = new AuthorBook();
-        authorBook.setIdBook(idBook);
-        authorBook.setIdAuthor(idAuthor);
-        authorBookService.update(authorBook);
-        allAuthorsBooks = authorBookService.findAllAuthorsBooks();
-        Assertions.assertEquals(idAuthor, allAuthorsBooks[0].getIdAuthor());
-    }
 
     @Test
-    @Order(4)
-    void findAllAuthorsBooks() {
-        AuthorBook[] allAuthorsBooks = authorBookService.findAllAuthorsBooks();
-        int expected = 11;
-        Assertions.assertEquals(expected, allAuthorsBooks.length);
-    }
-
-
-    @Test
-    @Order(5)
+    @Order(2)
     void delete() {
         AuthorBook[] allAuthorsBooks = authorBookService.findAllAuthorsBooks();
-        int before = allAuthorsBooks.length;
         String idBook = allAuthorsBooks[0].getIdBook();
         authorBookService.delete(idBook);
         allAuthorsBooks = authorBookService.findAllAuthorsBooks();
-        int after = allAuthorsBooks.length;
-        Assertions.assertEquals(before - 1, after);
+        Assertions.assertEquals(USERS_SIZE - 1, allAuthorsBooks.length);
     }
 
 

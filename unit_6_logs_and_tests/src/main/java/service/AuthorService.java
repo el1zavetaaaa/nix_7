@@ -8,8 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-
-
 public class AuthorService {
     private static final Logger LOGGER_INFO = LoggerFactory.getLogger("info");
     private static final Logger LOGGER_WARN = LoggerFactory.getLogger("warn");
@@ -18,7 +16,11 @@ public class AuthorService {
 
     public void create(Author author) {
         LOGGER_INFO.info("create new author: " + author.getFirstname() + author.getLastname());
-            authorDao.create(author);
+        if (author.getFirstname().matches("[A-Za-zА-яа-я]+$")) {
+            if (author.getLastname().matches("[A-Za-zА-яа-я]+$")) {
+                authorDao.create(author);
+            }
+        }
 
     }
 

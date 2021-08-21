@@ -2,6 +2,8 @@ package controller;
 
 import entity.Author;
 import org.apache.commons.lang3.ArrayUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import service.AuthorService;
 
 import java.io.BufferedReader;
@@ -9,6 +11,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class AuthorController {
+    private static final Logger LOGGER_INFO = LoggerFactory.getLogger("info");
+    private static final Logger LOGGER_WARN = LoggerFactory.getLogger("warn");
     private final AuthorService authorService = new AuthorService();
 
     public void start() {
@@ -79,6 +83,7 @@ public class AuthorController {
             author.setLastname(lastname);
             authorService.create(author);
             System.out.println("author's first name = " + author.getFirstname() + " ,author's last name = " + author.getLastname() + " ,author's id = " + author.getId());
+            LOGGER_INFO.info("create new author: " + author.getFirstname() + author.getLastname());
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
@@ -111,6 +116,7 @@ public class AuthorController {
             String id = reader.readLine();
             Author author = authorService.findAuthorById(id);
             authorService.delete(id, author);
+            LOGGER_WARN.warn("remove user by id: " + id);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }

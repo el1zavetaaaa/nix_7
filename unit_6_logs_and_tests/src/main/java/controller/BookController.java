@@ -3,6 +3,8 @@ package controller;
 
 import entity.Book;
 import org.apache.commons.lang3.ArrayUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import service.BookService;
 
 import java.io.BufferedReader;
@@ -10,7 +12,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class BookController {
-    private final BookService bookService= new BookService();
+    private static final Logger LOGGER_INFO = LoggerFactory.getLogger("info");
+    private static final Logger LOGGER_WARN = LoggerFactory.getLogger("warn");
+    private final BookService bookService = new BookService();
 
     public void start() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -60,7 +64,8 @@ public class BookController {
                 findAll(reader);
                 break;
             case "0":
-                System.out.println("Enter 0 one more time!");;
+                System.out.println("Enter 0 one more time!");
+                ;
                 break;
 
         }
@@ -75,7 +80,8 @@ public class BookController {
             Book book = new Book();
             book.setName(name);
             bookService.create(book);
-            System.out.println("book's name = "  + book.getName() + " ,book's id = " + book.getId());
+            System.out.println("book's name = " + book.getName() + " ,book's id = " + book.getId());
+            LOGGER_INFO.info("create new book: " + book.getName());
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
@@ -105,6 +111,7 @@ public class BookController {
             String id = reader.readLine();
             Book book = bookService.findBookById(id);
             bookService.delete(id, book);
+            LOGGER_WARN.warn("remove book by id: " + id);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }

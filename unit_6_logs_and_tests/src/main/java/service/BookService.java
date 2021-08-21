@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-
 public class BookService {
     private static final Logger LOGGER_INFO = LoggerFactory.getLogger("info");
     private static final Logger LOGGER_WARN = LoggerFactory.getLogger("warn");
@@ -16,9 +15,9 @@ public class BookService {
 
     public void create(Book book) {
         LOGGER_INFO.info("create new book: " + book.getName());
-
-           bookDao.create(book);
-
+        if (book.getName().matches("[A-Za-zА-яа-я]+$")) {
+            bookDao.create(book);
+        }
 
     }
 
@@ -41,7 +40,6 @@ public class BookService {
     public Book[] findAllBooks() {
         return bookDao.findAllBooks();
     }
-
 
 
 }

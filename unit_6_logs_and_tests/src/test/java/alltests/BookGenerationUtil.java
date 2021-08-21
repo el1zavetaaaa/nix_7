@@ -13,5 +13,12 @@ public class BookGenerationUtil {
         return book;
     }
 
+    public static Book generateBook1(String name) {
+        Book book = new Book();
+        book.setName(name);
+
+        return book;
+    }
+
 
 }

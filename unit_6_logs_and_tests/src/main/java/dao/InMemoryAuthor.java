@@ -60,7 +60,6 @@ public class InMemoryAuthor {
     }
 
 
-
     public Author[] findAllAuthors() {
         return authors;
     }

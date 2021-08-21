@@ -14,5 +14,13 @@ public class AuthorGenerationUtil {
         return author;
     }
 
+    public static Author generateAuthor1(String firstNAME, String lastNAME) {
+        Author author = new Author();
+        author.setFirstname(firstNAME);
+        author.setLastname(lastNAME);
+
+        return author;
+    }
+
 
 }

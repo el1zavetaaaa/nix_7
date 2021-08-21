@@ -6,7 +6,6 @@ import org.junit.jupiter.api.*;
 import service.AuthorService;
 
 
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -26,7 +25,7 @@ class AuthorServiceTest {
     @Test
     @Order(2)
     public void create() {
-        Author author =AuthorGenerationUtil.generateAuthor();
+        Author author = AuthorGenerationUtil.generateAuthor();
         authorService.create(author);
         Author[] authors = authorService.findAllAuthors();
         Assertions.assertEquals(AUTHORS_SIZE + 1, authors.length);
@@ -35,7 +34,7 @@ class AuthorServiceTest {
 
 
     @Test
-    @Order(4)
+    @Order(3)
     public void update() {
         Author[] authors = authorService.findAllAuthors();
         Author author;
@@ -44,7 +43,7 @@ class AuthorServiceTest {
     }
 
     @Test
-    @Order(5)
+    @Order(4)
     public void delete() {
         Author[] authors = authorService.findAllAuthors();
         Assertions.assertEquals(AUTHORS_SIZE + 1, authors.length);
@@ -56,7 +55,7 @@ class AuthorServiceTest {
     }
 
     @Test
-    @Order(6)
+    @Order(5)
     public void findAll() {
         Author[] authors = authorService.findAllAuthors();
         Assertions.assertEquals(AUTHORS_SIZE, authors.length);

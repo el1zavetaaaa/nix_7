@@ -1,6 +1,5 @@
 package controller;
 
-
 import entity.Book;
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
@@ -12,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class BookController {
+
     private static final Logger LOGGER_INFO = LoggerFactory.getLogger("info");
     private static final Logger LOGGER_WARN = LoggerFactory.getLogger("warn");
     private final BookService bookService = new BookService();
@@ -138,5 +138,4 @@ public class BookController {
             System.out.println("books = " + books);
         }
     }
-
 }

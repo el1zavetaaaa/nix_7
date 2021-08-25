@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class AuthorController {
+
     private static final Logger LOGGER_INFO = LoggerFactory.getLogger("info");
     private static final Logger LOGGER_WARN = LoggerFactory.getLogger("warn");
     private final AuthorService authorService = new AuthorService();
@@ -65,7 +66,6 @@ public class AuthorController {
             case "0":
                 System.out.println("Enter 0 one more time!");
                 break;
-
         }
         runNavigation();
     }
@@ -143,6 +143,4 @@ public class AuthorController {
             System.out.println("authors = " + authors);
         }
     }
-
-
 }

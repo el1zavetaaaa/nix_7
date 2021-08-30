@@ -9,23 +9,19 @@ import entity.Book;
 
 import java.util.Arrays;
 
-
 public class AuthorBookService {
+
     private final InMemoryAuthor authorDao = InMemoryAuthor.getInstance();
     private final InMemoryBook bookDao = InMemoryBook.getInstance();
     private final InMemoryAuthorBook authorBookDao = InMemoryAuthorBook.getInstance();
 
-
     public void createBookAuthors(Book book, Author[] authors) {
-
-
         if (book.getName() == "") {
             return;
         }
         if (authors[0].getFirstname() == "") {
             return;
         }
-
         int count = 0;
         bookDao.create(book);
 
@@ -39,19 +35,13 @@ public class AuthorBookService {
         }
         authorBookDao.create(InMemoryBook.getInstance().findBookById(book.getId()).getId()
                 , authorsId);
-
     }
-
 
     public void delete(String idBook) {
-
         authorBookDao.delete(idBook);
-
     }
-
 
     public AuthorBook[] findAllAuthorsBooks() {
         return authorBookDao.findAllAuthorsBooks();
     }
-
 }

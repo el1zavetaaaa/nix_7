@@ -5,9 +5,8 @@ import controller.BookController;
 import java.util.Scanner;
 
 public class Unit6App {
+
     public static void main(String[] args) {
-
-
         while (true) {
             System.out.println("1.CRUD Author.");
             System.out.println("2.CRUD Book.");
@@ -35,10 +34,7 @@ public class Unit6App {
             }
             if (shouldBreak) break;
         }
-
     }
-
-
 }
 
 

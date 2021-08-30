@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class AuthorBookController {
-    private final AuthorBookService authorBookService = new AuthorBookService();
 
+    private final AuthorBookService authorBookService = new AuthorBookService();
 
     public void start() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -57,7 +57,6 @@ public class AuthorBookController {
             case "0":
                 System.out.println("Enter 0 one more time!");
                 break;
-
         }
         runNavigation();
     }
@@ -85,7 +84,6 @@ public class AuthorBookController {
         }
     }
 
-
     private void delete(BufferedReader reader) {
         System.out.println("Author and Book.delete");
         try {
@@ -96,7 +94,6 @@ public class AuthorBookController {
             System.out.println("problem: = " + e.getMessage());
         }
     }
-
 
     private void findAll(BufferedReader reader) {
         System.out.println("Author and Book.findAll");

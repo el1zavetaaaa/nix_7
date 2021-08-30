@@ -4,16 +4,13 @@ import java.util.Arrays;
 
 import entity.AuthorBook;
 
-
 public class InMemoryAuthorBook {
-
 
     private AuthorBook[] authorsbooks = new AuthorBook[1];
     private int count = 1;
     private static final InMemoryAuthorBook instance = new InMemoryAuthorBook();
 
-    private InMemoryAuthorBook() {
-    }
+    private InMemoryAuthorBook() { }
 
     public int getCount() {
         return count;
@@ -44,16 +41,11 @@ public class InMemoryAuthorBook {
             authorsbooks = Arrays.copyOf(authorsbooks, count);
             authorsbooks[count - 1] = authorbook;
             count++;
-
         }
-
     }
 
-
     public void delete(String idBook) {
-
         int countDelId = 0;
-
         AuthorBook[] resultArray;
         for (int i = 0; i < authorsbooks.length; i++) {
             if (authorsbooks[i].getIdBook().equals(idBook)) {
@@ -72,13 +64,9 @@ public class InMemoryAuthorBook {
             }
         }
         authorsbooks = resultArray;
-
-
     }
-
 
     public AuthorBook[] findAllAuthorsBooks() {
         return authorsbooks;
     }
-
 }

@@ -25,9 +25,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void create(Book book) {
-        if (book.getName().matches("[A-Za-zА-яа-я]+$")) {
             bookDao.create(book);
-        }
         LOGGER_INFO.info("create new book: " + book.getId() + ": " + book.getName());
     }
 

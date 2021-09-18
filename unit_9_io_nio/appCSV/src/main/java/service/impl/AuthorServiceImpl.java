@@ -25,16 +25,13 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public void create(Author author) {
-        if (author.getFirstname().matches("[A-Za-zА-яа-я]+$")) {
-            if (author.getLastname().matches("[A-Za-zА-яа-я]+$")) {
                 authorDAO.create(author);
-            }
-        }
         LOGGER_INFO.info("create new author: " + author.getId() + ": " + author.getFirstname() + author.getFirstname());
     }
 
     @Override
     public void update(Author author) {
+
         if (isAuthorDeleted(author)) {
             LOGGER_ERROR.error("Error: book with this id was deleted");
             return;

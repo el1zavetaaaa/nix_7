@@ -117,7 +117,7 @@ public class AuthorController {
 
         AsciiTable authorTable = new AsciiTable();
         authorTable.addRule();
-        authorTable.addRow(null, null, null, null, "AUTHORS").setTextAlignment(TextAlignment.CENTER);
+        authorTable.addRow(null, null, null, "AUTHORS").setTextAlignment(TextAlignment.CENTER);
         authorTable.addRule();
         authorTable.addRow("ID", "NAME", "SURNAME", "BOOKS_ID");
         authorTable.addRule();

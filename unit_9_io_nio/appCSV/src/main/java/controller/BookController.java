@@ -123,7 +123,7 @@ public class BookController {
 
         AsciiTable bookTable = new AsciiTable();
         bookTable.addRule();
-        bookTable.addRow(null, null, null, "BOOKS").setTextAlignment(TextAlignment.CENTER);
+        bookTable.addRow(null,null, null, "BOOKS").setTextAlignment(TextAlignment.CENTER);
         bookTable.addRule();
         bookTable.addRow("ID", "NAME", "PRICE", "AUTHORS_ID");
         bookTable.addRule();
@@ -155,7 +155,7 @@ public class BookController {
 
         AsciiTable authorTable = new AsciiTable();
         authorTable.addRule();
-        authorTable.addRow(null, null, null, book.getName() + " authors").setTextAlignment(TextAlignment.CENTER);
+        authorTable.addRow(null,null, book.getName() + " authors").setTextAlignment(TextAlignment.CENTER);
         authorTable.addRule();
         authorTable.addRow("ID", "NAME", "SURNAME");
         authorTable.addRule();

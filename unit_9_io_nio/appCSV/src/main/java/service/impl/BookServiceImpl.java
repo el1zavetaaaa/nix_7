@@ -25,15 +25,19 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void create(Book book) {
+        if (book.getName().matches("[A-Za-z]+$")) {
             bookDao.create(book);
+        }
         LOGGER_INFO.info("create new book: " + book.getId() + ": " + book.getName());
     }
 
     @Override
     public void update(Book book) {
-        if (isBookDeleted(book)) {
-            LOGGER_ERROR.error("Error: book with this id was deleted");
-            return;
+        if (book.getName().matches("[A-Za-z]+$")) {
+            if (isBookDeleted(book)) {
+                LOGGER_ERROR.error("Error: book with this id was deleted");
+                return;
+            }
         }
         bookDao.update(book);
         LOGGER_INFO.info(("update book: " + book.getId()) + ": " + book.getName());
@@ -83,8 +87,12 @@ public class BookServiceImpl implements BookService {
             LOGGER_WARN.warn("WARN: Author already have this book");
             return;
         }
-        authorDAO.addBookToAuthor(author, book);
-        LOGGER_INFO.info("Book was successfully added to author: " + author.getId() + ": " + author.getFirstname() + author.getLastname() + "\n " + book.getId() + ": " + book.getName());
+        if (author.getFirstname().matches("[A-Za-z]+$")) {
+            if (author.getLastname().matches("[A-Za-z]+$")) {
+                authorDAO.addBookToAuthor(author, book);
+                LOGGER_INFO.info("Book was successfully added to author: " + author.getId() + ": " + author.getFirstname() + author.getLastname() + "\n " + book.getId() + ": " + book.getName());
+            }
+        }
     }
 
 

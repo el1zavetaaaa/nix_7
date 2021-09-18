@@ -25,16 +25,23 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public void create(Author author) {
+        if (author.getFirstname().matches("[A-Za-z]+$")) {
+            if (author.getLastname().matches("[A-Za-z]+$")) {
                 authorDAO.create(author);
+            }
+        }
         LOGGER_INFO.info("create new author: " + author.getId() + ": " + author.getFirstname() + author.getFirstname());
     }
 
     @Override
     public void update(Author author) {
-
-        if (isAuthorDeleted(author)) {
-            LOGGER_ERROR.error("Error: book with this id was deleted");
-            return;
+        if (author.getFirstname().matches("[A-Za-z]+$")) {
+            if (author.getLastname().matches("[A-Za-z]+$")) {
+                if (isAuthorDeleted(author)) {
+                    LOGGER_ERROR.error("Error: book with this id was deleted");
+                    return;
+                }
+            }
         }
         authorDAO.update(author);
         LOGGER_INFO.info(("update author: " + author.getId() + ": " + author.getFirstname() + author.getLastname()));
@@ -85,8 +92,10 @@ public class AuthorServiceImpl implements AuthorService {
             LOGGER_WARN.warn("Author adding book warning: author already have this book");
             return;
         }
-        authorDAO.addBookToAuthor(author, book);
-        LOGGER_INFO.info("Book was added to author:" + author.getId() + ": " + author.getFirstname() + author.getLastname() + book.getId() + ": " + book.getName());
+        if (book.getName().matches("[A-Za-z]+$")) {
+            authorDAO.addBookToAuthor(author, book);
+            LOGGER_INFO.info("Book was added to author:" + author.getId() + ": " + author.getFirstname() + author.getLastname() + book.getId() + ": " + book.getName());
+        }
     }
 
 

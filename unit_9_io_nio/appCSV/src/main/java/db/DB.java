@@ -35,9 +35,9 @@ public class DB {
     private final Integer BOOK_TABLE_COLUMNS_AMOUNT = bookTableHeader.length;
     private final Integer BOOK_REGISTRATION_TABLE_COLUMNS_AMOUNT = authorBookTableHeader.length;
 
-    private final String authorFilePath = "nix_7/unit_9_io_nio/appCSV/src/main/resources/author.csv";
-    private final String bookFilePath = "nix_7/unit_9_io_nio/appCSV/src/main/resources/book.csv";
-    private final String authorBookFilePath = "nix_7/unit_9_io_nio/appCSV/src/main/resources/ authorBook.csv";
+    private final String authorFilePath = "src/main/resources/author.csv";
+    private final String bookFilePath = "src/main/resources/book.csv";
+    private final String authorBookFilePath = "src/main/resources/ authorBook.csv";
 
     private void setAuthorReader() {
         authorReader = new ReadAndWriteCSV(authorFilePath);

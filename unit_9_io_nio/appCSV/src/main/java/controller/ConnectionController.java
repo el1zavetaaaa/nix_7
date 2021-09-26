@@ -2,10 +2,10 @@ package controller;
 
 import entity.Author;
 import entity.Book;
-import service.AuthorService;
-import service.BookService;
-import service.impl.AuthorServiceImpl;
-import service.impl.BookServiceImpl;
+import util.AuthorService;
+import util.BookService;
+import util.impl.AuthorServiceImpl;
+import util.impl.BookServiceImpl;
 
 import java.util.Scanner;
 

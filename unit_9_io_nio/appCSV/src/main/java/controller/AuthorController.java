@@ -6,8 +6,8 @@ import de.vandermeer.skb.interfaces.transformers.textformat.TextAlignment;
 
 import entity.Author;
 import entity.Book;
-import service.AuthorService;
-import service.impl.AuthorServiceImpl;
+import util.AuthorService;
+import util.impl.AuthorServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Comparator;

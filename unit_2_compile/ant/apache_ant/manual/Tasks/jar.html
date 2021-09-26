@@ -357,20 +357,20 @@ to <q>true</q>.</p>
 transformations for the archives specified by <code>indexjars</code> if the
 <a href="#indexjars">default filename transformation</a> doesn't suffice.
 
-<h4 id="service">service</h4>
+<h4 id="service">util</h4>
 
 <p><em>Since Ant 1.7.0</em></p>
 
-<p>The nested <code>service</code> element specifies a service.  Services are described in
+<p>The nested <code>util</code> element specifies a util.  Services are described in
 the <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html#Service_Provider"
-target="_top">service provider overview</a>.  The approach is to have providers JARs include files
-named by the service provided, for
+target="_top">util provider overview</a>.  The approach is to have providers JARs include files
+named by the util provided, for
 example, <samp>META-INF/services/javax.script.ScriptEngineFactory</samp> which can include
 implementation class names, one per line (usually just one per JAR).</p>
 
-<p>The name of the service is set by the <var>type</var> attribute. The classname implementing the
-service is the the <var>provider</var> attribute, or if one wants to specify a number of classes
-that implement the service, by <code>provider</code> nested elements.</p>
+<p>The name of the util is set by the <var>type</var> attribute. The classname implementing the
+util is the the <var>provider</var> attribute, or if one wants to specify a number of classes
+that implement the util, by <code>provider</code> nested elements.</p>
 <table class="attr">
   <tr>
     <th scope="col">Attribute</th>
@@ -379,18 +379,18 @@ that implement the service, by <code>provider</code> nested elements.</p>
   </tr>
   <tr>
     <td>type</td>
-    <td>The name of the service.</td>
+    <td>The name of the util.</td>
     <td>Yes</td>
   </tr>
   <tr>
     <td>provider</td>
-    <td>The classname of the class implementing the service.</td>
+    <td>The classname of the class implementing the util.</td>
     <td>Yes, unless there is a nested <code>&lt;provider&gt;</code> element.</td>
   </tr>
 </table>
 <p>The provider classname is specified either by the <var>provider</var> attribute, or by a
 nested <code>&lt;provider&gt;</code> element, which has a single <var>classname</var> attribute.  If
-a JAR file has more that one implementation of the service, a number of
+a JAR file has more that one implementation of the util, a number of
 nested <code>&lt;provider&gt;</code> elements may be used.</p>
 
 <h3>Examples</h3>
@@ -507,24 +507,24 @@ Sealed: false</pre>
 
 <h4>Service Provider</h4>
 
-<p>The following shows how to create a jar file specifying a service with an implementation of the
+<p>The following shows how to create a jar file specifying a util with an implementation of the
 scripting interface:</p>
 <pre>
 &lt;jar destfile="pinky.jar"&gt;
     &lt;fileset dir="build/classes"/&gt;
-    &lt;service type="javax.script.ScriptEngineFactory"
+    &lt;util type="javax.script.ScriptEngineFactory"
              provider="org.acme.PinkyLanguage"/&gt;
 &lt;/jar&gt;</pre>
 
-<p>The following shows how to create a jar file specifying a service with two implementations of the
+<p>The following shows how to create a jar file specifying a util with two implementations of the
 scripting interface:</p>
 <pre>
 &lt;jar destfile="pinkyandbrain.jar"&gt;
     &lt;fileset dir="classes"/&gt;
-    &lt;service type="javax.script.ScriptEngineFactory"&gt;
+    &lt;util type="javax.script.ScriptEngineFactory"&gt;
         &lt;provider classname="org.acme.PinkyLanguage"/&gt;
         &lt;provider classname="org.acme.BrainLanguage"/&gt;
-    &lt;/service&gt;
+    &lt;/util&gt;
 &lt;/jar&gt;</pre>
 
 <h4 id="jep238-example">JEP 238 example: a Multi-Release JAR Files</h4>

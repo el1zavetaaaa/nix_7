@@ -142,7 +142,7 @@ extends <a href="../../Task.html" title="class in org.apache.tools.ant">Task</a>
      Each is either a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/FileSystem.html#getPathMatcher%28java.lang.String%29">standard PathMatcher pattern</a>
      or <code>@</code><var>filename</var>.
  <dt><code>bindServices</code>
- <dd>boolean, whether to link service providers; default is false
+ <dd>boolean, whether to link util providers; default is false
  <dt><code>ignoreSigning</code>
  <dd>boolean, whether to allow signed jar files; default is false
  <dt><code>includeHeaders</code>
@@ -1109,7 +1109,7 @@ extends <a href="../../Task.html" title="class in org.apache.tools.ant">Task</a>
  in the module path of services used by explicitly linked modules.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if linked will pull in service provides, false if not</dd>
+<dd>true if linked will pull in util provides, false if not</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#setBindServices(boolean)"><code>setBindServices(boolean)</code></a></dd>
 </dl>
@@ -1123,7 +1123,7 @@ extends <a href="../../Task.html" title="class in org.apache.tools.ant">Task</a>
  in the module path of services used by explicitly linked modules.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>bind</code> - whether to include service providers</dd>
+<dd><code>bind</code> - whether to include util providers</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#getBindServices()"><code>getBindServices()</code></a></dd>
 </dl>

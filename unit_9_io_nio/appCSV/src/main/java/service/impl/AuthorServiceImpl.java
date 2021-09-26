@@ -1,4 +1,4 @@
-package service.impl;
+package util.impl;
 
 import dao.AuthorDao;
 import dao.BookDao;
@@ -8,7 +8,7 @@ import entity.Author;
 import entity.Book;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import service.AuthorService;
+import util.AuthorService;
 
 import java.util.HashSet;
 import java.util.NoSuchElementException;

@@ -4,8 +4,8 @@ import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.skb.interfaces.transformers.textformat.TextAlignment;
 import entity.Author;
 import entity.Book;
-import service.BookService;
-import service.impl.BookServiceImpl;
+import util.BookService;
+import util.impl.BookServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Comparator;

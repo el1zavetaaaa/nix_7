@@ -9,8 +9,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import service.AuthorBookService;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class AuthorBookServiceTest {
     private final static AuthorBookService authorBookService = new AuthorBookService();
     private final static int USERS_SIZE = 10;

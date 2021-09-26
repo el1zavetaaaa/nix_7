@@ -104,7 +104,7 @@ loadScripts(document, 'script');</script>
 extends <a href="DataType.html" title="class in org.apache.tools.ant.types">DataType</a>
 implements org.xml.sax.EntityResolver, javax.xml.transform.URIResolver</pre>
 <div class="block"><p>This data type provides a catalog of resource locations (such as
- DTDs and XML entities), based on the <a href="https://oasis-open.org/committees/entity/spec-2001-08-06.html">
+ DTDs and XML entity), based on the <a href="https://oasis-open.org/committees/entity/spec-2001-08-06.html">
  OASIS "Open Catalog" standard</a>.  The catalog entries are used
  both for Entity resolution and URI resolution, in accordance with
  the <code>EntityResolver</code> and <code>URIResolver</code> interfaces as defined
@@ -148,7 +148,7 @@ implements org.xml.sax.EntityResolver, javax.xml.transform.URIResolver</pre>
  <code>entity</code> respectively.</p>
 
  <p>The following is a description of the resolution algorithm:
- entities/URIs/dtds are looked up in each of the following contexts,
+ entity/URIs/dtds are looked up in each of the following contexts,
  stopping when a valid and readable resource is found:</p>
  <ol>
  <li>In the local filesystem</li>
@@ -464,7 +464,7 @@ java.lang.String&nbsp;systemId)</code></th>
  other attributes.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>classpath</code> - the classpath to use to look up entities.</dd>
+<dd><code>classpath</code> - the classpath to use to look up entity.</dd>
 </dl>
 </section>
 </li>

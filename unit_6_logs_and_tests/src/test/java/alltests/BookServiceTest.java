@@ -7,8 +7,6 @@ import org.junit.jupiter.api.*;
 
 import service.BookService;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class BookServiceTest {
     private final static BookService bookService = new BookService();

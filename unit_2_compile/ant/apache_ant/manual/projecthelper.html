@@ -67,13 +67,13 @@ found in an internal 'repository':
   <li>the first to be searched for is the one declared by the system
     property <code class="code">org.apache.tools.ant.ProjectHelper</code>
     (see <a href="running.html#sysprops">Java System Properties</a>);</li>
-  <li>then it searches with its class loader for a <code>ProjectHelper</code> service declarations
+  <li>then it searches with its class loader for a <code>ProjectHelper</code> util declarations
     in the <samp>META-INF</samp>: it searches in the classpath for a
     file <samp>META-INF/services/org.apache.tools.ant.ProjectHelper</samp>.  This file will just
     contain the fully qualified name of the implementation
     of <code class="code">ProjectHelper</code> to instantiate;</li>
   <li>it will also search with the system class loader for <code class="code">ProjectHelper</code>
-    service declarations in the <samp>META-INF</samp>;</li>
+    util declarations in the <samp>META-INF</samp>;</li>
   <li>last but not least it will add its default <code class="code">ProjectHelper</code> that can
     parse classical <samp>build.xml</samp> files.</li>
 </ul>
@@ -130,7 +130,7 @@ Now that you have your implementation ready, you have to declare it to Ant. Thre
 <ul>
   <li>use the system property <code class="code">org.apache.tools.ant.ProjectHelper</code> (see also
     the <a href="running.html#sysprops">Java System Properties</a>);</li>
-  <li>use the service file in <samp>META-INF</samp>: in the jar you will build with your
+  <li>use the util file in <samp>META-INF</samp>: in the jar you will build with your
     implementation, add a file <samp>META-INF/services/org.apache.tools.ant.ProjectHelper</samp>.
     And then in this file just put the fully qualified name of your implementation</li>
   <li>use the <a href="Tasks/projecthelper.html">projecthelper</a> task (<em>since Ant 1.8.2</em>)

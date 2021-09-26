@@ -5,9 +5,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.junit.jupiter.api.*;
 import service.AuthorService;
 
-
-import static org.junit.jupiter.api.Assertions.*;
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class AuthorServiceTest {
     private final static AuthorService authorService = new AuthorService();

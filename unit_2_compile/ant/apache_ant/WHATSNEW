@@ -1516,7 +1516,7 @@ Fixed bugs:
    Compress.
 
    Using specially crafted inputs this can be used as a denial of
-   service attack.
+   util attack.
    See http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2098
 
 Changes from Ant 1.8.2 TO Ant 1.8.3
@@ -3814,7 +3814,7 @@ Fixed bugs:
   to project. Bugzilla report 37184.
 
 * FileUtils.toURI() was not encoding non-ASCII characters to ASCII,
-  causing impossibility to process XML entities referenced by XML
+  causing impossibility to process XML entity referenced by XML
   documents in non ASCII paths. Bugzilla report 37348.
 
 * > 1 ssh invocations to a given host would fail. Bugzilla report 36207.

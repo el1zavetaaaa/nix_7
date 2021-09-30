@@ -16,7 +16,7 @@ public class SolutionsDao {
         this.connection = connection;
     }
 
-    public void adding(List<Solutions> solutions) {
+    public void saveAll(List<Solutions> solutions) {
 
         try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
             for (Solutions solution : solutions) {

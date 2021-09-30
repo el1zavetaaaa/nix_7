@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class ConnectionToSql {
+public class PathFinderService {
     public void minimalDistance() {
         Properties properties = loadProperties();
 
@@ -33,7 +33,7 @@ public class ConnectionToSql {
 
             int cities = locationDao.allLocations().size();
 
-            List<Problems> problems = problemDao.allProblems();
+            List<Problems> problems = problemDao.getUnsolvedProblems();
 
             int[][] matrix = new int[cities][cities];
             List<Route> routes = routeDao.allRoutes();
@@ -55,7 +55,7 @@ public class ConnectionToSql {
                 solution.setCost(distance);
                 solutions.add(solution);
             }
-            solutionDao.adding(solutions);
+            solutionDao.saveAll(solutions);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -65,7 +65,7 @@ public class ConnectionToSql {
 
         Properties props = new Properties();
 
-        try (InputStream input = ConnectionToSql.class.getResourceAsStream("/jdbc.properties")) {
+        try (InputStream input = PathFinderService.class.getResourceAsStream("/jdbc.properties")) {
             props.load(input);
         } catch (IOException e) {
             throw new UncheckedIOException(e);

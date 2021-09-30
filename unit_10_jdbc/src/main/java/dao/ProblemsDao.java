@@ -19,7 +19,7 @@ public class ProblemsDao {
     }
 
 
-    public List<Problems> allProblems() {
+    public List<Problems> getUnsolvedProblems() {
         List<Problems> problems = new ArrayList<>();
         try (PreparedStatement statement = connection.prepareStatement(ALL)) {
             ResultSet resultSet = statement.executeQuery();

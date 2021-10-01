@@ -1,14 +1,10 @@
 import collect.CollectObjects;
-import entity.Person;
 import entity.Table;
-
-import java.util.List;
 
 public class Unit12App {
     public static void main(String[] args) {
         CollectObjects objects = new CollectObjects();
         Table table = objects.data();
-        List<Person> persons = table.getPeople();
 
         System.out.print(table.cell(1, "name"));
         System.out.print("," + "  ");

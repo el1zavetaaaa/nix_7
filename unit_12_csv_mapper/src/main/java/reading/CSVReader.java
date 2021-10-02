@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CSVReader {
     private static final String CSV = "unit_12_csv_mapper/src/main/resources/input.csv";
-    public List<String[]> read(){
+    public List<String[]> readCsvFile(){
         Path path = Paths.get(CSV);
         try {
             List<String> rows = Files.readAllLines(path);

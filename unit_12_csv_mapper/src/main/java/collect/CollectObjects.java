@@ -10,11 +10,11 @@ import java.util.HashMap;
 import java.util.List;
 
 public class CollectObjects {
-    public Table data(){
+    public Table getDataFromDb(){
         Mapping mapping = new Mapping();
         Table table = new Table();
         CSVReader reader = new CSVReader();
-        List<String[]> values = reader.read();
+        List<String[]> values = reader.readCsvFile();
         table.setValues(values);
         List<Person> persons = new ArrayList<>();
         int counter = 0;

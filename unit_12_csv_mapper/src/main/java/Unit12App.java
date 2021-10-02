@@ -4,7 +4,7 @@ import entity.Table;
 public class Unit12App {
     public static void main(String[] args) {
         CollectObjects objects = new CollectObjects();
-        Table table = objects.data();
+        Table table = objects.getDataFromDb();
 
         System.out.print(table.cell(1, "name"));
         System.out.print("," + "  ");

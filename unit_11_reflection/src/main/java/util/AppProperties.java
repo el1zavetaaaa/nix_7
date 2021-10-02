@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class AppProperties {
 
-    public <T> T initialize(Class<T> clazz) {
+    public <T> T checkIfInitialize(Class<T> clazz) {
         T object;
         try {
             object = clazz.getDeclaredConstructor().newInstance();

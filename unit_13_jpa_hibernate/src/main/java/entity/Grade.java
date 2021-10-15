@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "grades")
 public class Grade {
-
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
@@ -20,8 +19,7 @@ public class Grade {
         @JoinColumn(name = "student_id")
         private Student student;
 
-        public Grade() {
-        }
+        public Grade(){}
 
         public Integer getId() {
                 return id;

@@ -14,7 +14,7 @@ public class AddingDataUsingHibernate {
         session.persist(course);
 
         Group group = new Group();
-        group.setGroupCode("L-11A");
+        group.setGroupCode("[L-11A]");
         course.addGroup(group);
         session.persist(course);
         session.persist(group);
@@ -27,6 +27,7 @@ public class AddingDataUsingHibernate {
         student.setName("Student 1");
         student.setGroup(group);
         session.persist(student);
+        student.setId(1);
 
         Theme theme = new Theme();
         theme.setName("Theme 1");
@@ -42,7 +43,7 @@ public class AddingDataUsingHibernate {
 
         Lesson lesson1 = new Lesson();
         lesson1.setGroup(group);
-        lesson1.setTeacher(teacher);
+        lesson.setTeacher(teacher);
         lesson1.setTheme(theme);
         calendar = new GregorianCalendar(2021, Calendar.OCTOBER, 13, 12, 35);
         lesson1.setDateTime(calendar.getTime());

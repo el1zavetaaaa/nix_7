@@ -1,13 +1,12 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "themes")
 public class Theme {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,9 +14,21 @@ public class Theme {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "theme")
-    private List<Lesson> lessons = new ArrayList<>();
+    private Set<Lesson> lessons = new HashSet<>();
 
     public Theme(){}
+
+    public Theme(String name){
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -27,23 +38,15 @@ public class Theme {
         this.name = name;
     }
 
-    public List<Lesson> getLessons() {
+    public Set<Lesson> getLessons() {
         return lessons;
     }
 
-    public void setLessons(List<Lesson> lessons) {
+    public void setLessons(Set<Lesson> lessons) {
         this.lessons = lessons;
     }
 
     public void addLesson(Lesson lesson){
         lessons.add(lesson);
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

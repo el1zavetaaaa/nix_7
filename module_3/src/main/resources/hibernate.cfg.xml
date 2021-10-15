@@ -12,13 +12,13 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <mapping class="entity.Group"/>
-        <mapping class="entity.Student"/>
-        <mapping class="entity.Teacher"/>
-        <mapping class="entity.Course"/>
-        <mapping class="entity.Theme"/>
-        <mapping class="entity.Lesson"/>
-        <mapping class="entity.Grade"/>
+        <mapping class="entity.Account"/>
+        <mapping class="entity.Category"/>
+        <mapping class="entity.ExpenseCategory"/>
+        <mapping class="entity.IncomeCategory"/>
+        <mapping class="entity.Transaction"/>
+        <mapping class="entity.User"/>
+
     </session-factory>
 
 </hibernate-configuration>

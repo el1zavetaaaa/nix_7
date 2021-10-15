@@ -2,12 +2,13 @@ package entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "groups")
 public class Group {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,16 +16,15 @@ public class Group {
     @Column(nullable = false, unique = true)
     private String groupCode;
 
-
     @OneToMany(mappedBy = "group")
-    private List<Student> students = new ArrayList<>();
+    private List<Student> students;
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "lesson_group")
     private List<Lesson> lessons = new ArrayList<>();
 
-    @ManyToMany( fetch = FetchType.LAZY,mappedBy = "groups")
-    private List<Course> courses = new ArrayList<>();
+    @ManyToMany(mappedBy = "groups")
+    private Set<Course> courses = new HashSet<>();
 
     public Group(){
         this.students = new ArrayList<>();
@@ -33,6 +33,14 @@ public class Group {
     public Group(String groupCode){
         this.groupCode = groupCode;
         this.students = new ArrayList<>();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getGroupCode() {
@@ -51,10 +59,6 @@ public class Group {
         this.students = students;
     }
 
-    public void addStudent(Student student) {
-        students.add(student);
-    }
-
     public List<Lesson> getLessons() {
         return lessons;
     }
@@ -63,23 +67,19 @@ public class Group {
         this.lessons = lessons;
     }
 
-    public void addLesson(Lesson lesson){
-        lessons.add(lesson);
+    public void addStudent(Student student) {
+        students.add(student);
     }
 
-    public List<Course> getCourses() {
+    public Set<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
+    public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public void addLesson(Lesson lesson){
+        lessons.add(lesson);
     }
 }

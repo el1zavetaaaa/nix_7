@@ -17,7 +17,8 @@ public class FindTheNearestLesson {
              Session session = sessionFactory.openSession()) {
             try {
                 session.beginTransaction();
-                Query query = session.createQuery("select l from Lesson l join Group g on l.group.id=g.id join Student s on s.group.id = g.id where s.id = " + studentID + " order by l.dateTime");
+                Query query = session.createQuery("select l from Lesson l join Group g on l.group.id=g.id join Student s on s.group.id = g.id where s.id = :studentId" + " order by l.dateTime");
+                query.setParameter("studentId", studentID);
                 query.setMaxResults(1);
                 session.getTransaction().commit();
                 Lesson theNearestLesson = (Lesson) query.getSingleResult();

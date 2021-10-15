@@ -1,13 +1,12 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "students")
 public class Student {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -19,24 +18,22 @@ public class Student {
     @JoinColumn(name = "group_id")
     private Group group;
 
+    @OneToMany(mappedBy = "student")
+    private Set<Grade> grades = new HashSet<>();
 
-    private List<Grade> grades = new ArrayList<>();
+    public Student(){}
 
-    public Student() {
-    }
-
-    public Student(String name, Group group) {
+    public Student(String name, Group group){
         this.name = name;
         this.group = group;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    @Id
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -47,7 +44,6 @@ public class Student {
         this.name = name;
     }
 
-    @ManyToOne(targetEntity = Group.class,fetch = FetchType.LAZY)
     public Group getGroup() {
         return group;
     }
@@ -56,12 +52,12 @@ public class Student {
         this.group = group;
         group.addStudent(this);
     }
-    @OneToMany(targetEntity = Grade.class, mappedBy = "student", fetch = FetchType.LAZY)
-    public List<Grade> getGrades() {
+
+    public Set<Grade> getGrades() {
         return grades;
     }
 
-    public void setGrades(List<Grade> grades) {
+    public void setGrades(Set<Grade> grades) {
         this.grades = grades;
     }
 }

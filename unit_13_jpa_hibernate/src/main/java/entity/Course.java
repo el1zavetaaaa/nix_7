@@ -7,7 +7,6 @@ import java.util.Set;
 @Entity
 @Table(name = "courses")
 public class Course {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -20,13 +19,20 @@ public class Course {
             joinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "group_id", referencedColumnName = "id")
     )
-
     private Set<Group> groups = new HashSet<>();
 
     public Course(){ }
 
     public Course(String name){
         this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -48,13 +54,5 @@ public class Course {
     public void addGroup(Group group){
         groups.add(group);
         group.getCourses().add(this);
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

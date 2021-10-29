@@ -11,7 +11,14 @@ import java.util.Set;
 @Table(name = "accounts")
 @Getter
 @Setter
-public class Account extends BaseEntity {
+public class Account  {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    protected Long id;
+
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

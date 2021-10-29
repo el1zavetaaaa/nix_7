@@ -31,9 +31,8 @@ public class JPATransactionService {
         transaction.setValue(value);
         transaction.setCategory(category);
         account.setBalance(account.getBalance() + transaction.getValue());
-        session.update(account);
-        session.flush();
         session.save(transaction);
+        session.getTransaction().commit();
     }
 
     public List<IncomeCategory> getIncomeCategories() {

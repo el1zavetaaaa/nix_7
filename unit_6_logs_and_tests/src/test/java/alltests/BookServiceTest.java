@@ -18,7 +18,7 @@ class BookServiceTest {
             Book book = BookGenerationUtil.generateBook();
             bookService.create(book);
         }
-        Assertions.assertEquals(BOOKS_SIZE, bookService.findAllBooks().length);
+        Assertions.assertEquals(BOOKS_SIZE, bookService.findAllBooks().length );
     }
 
     @Test

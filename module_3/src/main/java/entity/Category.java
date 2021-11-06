@@ -13,7 +13,10 @@ import java.util.Set;
 @Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "category_type", discriminatorType = DiscriminatorType.STRING)
-public class Category extends BaseEntity {
+public class Category  {
+    @Id
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     private String name;
 

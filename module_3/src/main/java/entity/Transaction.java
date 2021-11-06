@@ -10,7 +10,10 @@ import java.time.Instant;
 @Table(name = "transactions")
 @Getter
 @Setter
-public class Transaction extends BaseEntity {
+public class Transaction  {
+    @Id
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id", nullable = false)
